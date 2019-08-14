@@ -1,0 +1,80 @@
+@import "node_modules/bootstrap/scss/bootstrap-grid.scss";
+
+html {
+  height: 100%;
+}
+
+body {
+  background: rgb(35, 42, 46);
+  padding-top: 24px;
+  font-family: "Roboto", sans-serif;
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 0;
+  }
+}
+
+.container {
+  position: relative;
+}
+
+.main-video {
+  &:not(.is-active) {
+    .youtube-video {
+      display: none;
+    }
+  }
+
+  .youtube-video {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 12px);
+
+    @include media-breakpoint-down(sm) {
+      top: 0;
+      left: -4px;
+      height: 100%;
+      width: calc(100% + 8px);
+    }
+  }
+}
+
+.account {
+}
+
+.v--modal-overlay {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  .v--modal-box {
+    border-radius: 10px;
+    background: #12161d linear-gradient(-150deg, #21252b 12%, #12161d 79%);
+    box-shadow: 0 0 45px 0 rgba(0, 0, 0, 0.25);
+    padding: 0 2rem;
+    color: lighten(#999fab, 20%);
+
+    .promo-code {
+      color: #66e555;
+      font-weight: bold;
+    }
+
+    .vue-dialog-buttons {
+      display: none;
+    }
+
+    .modal-title {
+      font-size: 120%;
+      text-align: left;
+      padding: 15px 0;
+      border-bottom: 1px solid lighten(#1e2025, 10%);
+    }
+
+    .modal-text {
+      padding: 15px 0 0 0;
+    }
+  }
+}
